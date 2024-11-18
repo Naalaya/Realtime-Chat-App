@@ -1,0 +1,8 @@
+spring:
+  config:
+    import: optional:file:../.env.development[.properties]
+#    .env.development[.properties]
+
+DB_URL: ${DB_URL}
+DB_USER: ${POSTGRES_USER}
+DB_PASSWORD: ${POSTGRES_PASSWORD}
