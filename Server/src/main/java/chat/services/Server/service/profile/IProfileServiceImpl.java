@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class profileSrvIplm implements ProfileSrv {
+public class IProfileServiceImpl implements IProfileService {
     @Autowired
     private ProfileRepo profileRepo;
 

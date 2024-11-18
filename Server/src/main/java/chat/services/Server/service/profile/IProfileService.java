@@ -3,7 +3,7 @@ package chat.services.Server.service.profile;
 import chat.services.Server.model.Profile;
 import java.util.List;
 
-public interface ProfileSrv {
+public interface IProfileService {
     // Add new user (register)
     public Profile addUserProfile(Profile Profile);
 

@@ -1,7 +1,7 @@
 package chat.services.Server.controller.user;
 
 import chat.services.Server.model.Profile;
-import chat.services.Server.service.profile.ProfileSrv;
+import chat.services.Server.service.profile.IProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/profile")
 public class UserController {
     @Autowired
-    private ProfileSrv ProfileSrv;
+    private IProfileService ProfileSrv;
 
     // Add Profile (user Information)
     @GetMapping("/add")
