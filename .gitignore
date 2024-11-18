@@ -1,5 +1,5 @@
 # Environment
-.env.development
+.env.*
 
 # Idea
 .idea
