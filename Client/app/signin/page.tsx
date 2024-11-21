@@ -6,7 +6,7 @@ export default function SignIn() {
       <div className="flex w-1/2 h-3/5 shadow-lg rounded-lg overflow-hidden">
         <div className="w-2/5 bg-gray-100 flex items-center justify-center">
           <Image
-            src="/assets/placeholder-image.png"
+            src= "/assets/placeholder-image.png"
             alt="Logo" 
             width={125}
             height={125}
