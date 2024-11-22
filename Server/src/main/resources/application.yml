@@ -2,9 +2,10 @@ spring:
   application:
     name: chatserver
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5433/chatservices
+    username: postgres
+    password: minhhung2511
+    driver-class-name: org.postgresql.Driver
   jpa:
     properties:
       hibernate:
@@ -25,8 +26,8 @@ spring:
   devtools:
     restart:
       enabled: true
-#  profiles:
-#    active: dev
+  profiles:
+    active: dev
 
 logging:
   level:
