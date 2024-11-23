@@ -1,0 +1,45 @@
+spring:
+  config:
+    import: optional:file:../.env.development[.properties]
+#    .env.development[.properties]
+
+DB_URL: jdbc:postgresql://localhost:5432/
+DB_USER: postgres
+DB_PASSWORD: minhhung2511
+
+#spring:
+#  application:
+#    name: chatserver
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/
+#    username: postgres
+#    password: minhhung2511
+#  jpa:
+#    properties:
+#      hibernate:
+#        ddl-auto: none
+#        format_sql: true
+##        hibernate:
+##          ddl-auto: update
+#    show-sql: true
+#    open-in-view: true
+#  flyway:
+#    create-schemas: true
+#    enabled: true
+#    baseline-on-migrate: true
+#    out-of-order: true
+#    locations: classpath:db/migration
+#    postgresql:
+#      transactional-lock: true
+#  devtools:
+#    restart:
+#      enabled: true
+##  profiles:
+##    active: dev
+#
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: DEBUG

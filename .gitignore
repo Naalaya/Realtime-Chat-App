@@ -1,2 +1,7 @@
-node_modules/
-.next/
+# Environment
+.env.*
+
+# Idea
+.idea
+
+../.DS_Store
