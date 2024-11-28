@@ -16,12 +16,12 @@ import lombok.Setter;
 public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name  = "address")
+    @Column(name  = "address", nullable = false)
     private String address;
 
 }

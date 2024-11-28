@@ -2,9 +2,9 @@ package chat.services.Server.service.auth;
 
 import chat.services.Server.DTO.SignUpRequest;
 import chat.services.Server.model.Auth;
-import chat.services.Server.model.User;
+import chat.services.Server.model.Profile;
 import chat.services.Server.repository.AuthRepo;
-import chat.services.Server.repository.UsersRepo;
+import chat.services.Server.repository.ProfileRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,7 +19,7 @@ public class AuthService {
     public AuthRepo authRepo;
 
     @Autowired
-    public UsersRepo usersRepo;
+    public ProfileRepo profileRepo;
 
     @Autowired
     private JWTService jwtService;
@@ -38,14 +38,14 @@ public class AuthService {
         Auth auth = new Auth();
         auth.setPassword(encoder.encode(request.getPassword()));
         auth.setUsername(request.getUsername());
+        auth.setEmail(request.getEmail());
 
-        User user = new User();
-        user.setImage(request.getImage());
+        Profile user = new Profile();
         user.setName(request.getName());
         user.setAddress(request.getAddress());
 
         authRepo.save(auth); // store username, password in auth table
-        usersRepo.save(user); // store user details in users table
+        profileRepo.save(user); // store user details in users table
 
         return "Successfully register new user!";
     }

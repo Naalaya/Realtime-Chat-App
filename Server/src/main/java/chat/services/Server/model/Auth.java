@@ -1,52 +1,39 @@
 package chat.services.Server.model;
 import jakarta.persistence.*;
-//import lombok.AllArgsConstructor;
-//import lombok.Getter;
-//import lombok.NoArgsConstructor;
-//import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-//import java.time.LocalDateTime;
-
-//@Getter
-//@Setter
-//@AllArgsConstructor
-//@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
-@Table(name = "auth")
+@Table(name = "auths")
 public class Auth {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false)
     private String userName;
-    @Column(name = "password")
+
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "email", nullable = false)
+    private String email;
+
     public Auth() {
     }
-    public Auth(String username, String password) {
+    public Auth(String username, String password, String email) {
         this.userName = username;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.email = email;
     }
 
     public String getUsername() {
         return userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public void setUsername(String username) {
@@ -59,6 +46,7 @@ public class Auth {
                 "id=" + id +
                 ", username='" + userName + '\'' +
                 ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 
